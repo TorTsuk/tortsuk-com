@@ -190,12 +190,19 @@ section h2 {
   font-size: 0.8rem;
   color: var(--color-text-light);
   display: block;
-  margin-top: 0.2rem;
+  margin-bottom: 0.25rem;
 }
 
 .post-list a, .episode-list a {
   font-family: var(--font-serif);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
+}
+
+.post-description {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin: 0.25rem 0 0;
+  line-height: 1.5;
 }
 
 /* ===== Blog Post ===== */
