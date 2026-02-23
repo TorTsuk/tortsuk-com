@@ -49,7 +49,7 @@
 
     <section>
       <h2>פרקים אחרונים</h2>
-      <ul class="episode-list">
+      <ul class="episode-list" id="episode-list">
         <li>
           <a href="https://open.spotify.com/show/674Fd3udoDREXmBq44dHWY" target="_blank">פרק 179: אל תקנו דג לפני שתשמעו את הפרק הזה עם ד״ר ירון כהן</a>
         </li>
@@ -77,5 +77,22 @@
   </footer>
 
 <script data-goatcounter="https://tortsuk.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+  fetch('https://feeds.megaphone.fm/POLTD1514843688')
+    .then(r => r.text())
+    .then(str => {
+      const xml = new DOMParser().parseFromString(str, 'text/xml');
+      const items = Array.from(xml.querySelectorAll('item')).slice(0, 5);
+      if (!items.length) return;
+
+      const list = document.getElementById('episode-list');
+      list.innerHTML = items.map(item => {
+        const title = item.querySelector('title')?.textContent?.trim() || '';
+        const link  = item.querySelector('link')?.textContent?.trim()  || 'https://open.spotify.com/show/674Fd3udoDREXmBq44dHWY';
+        return `<li><a href="${link}" target="_blank">${title}</a></li>`;
+      }).join('');
+    })
+    .catch(() => { /* שומר על הרשימה הסטטית כגיבוי */ });
+</script>
 </body>
 </html>
