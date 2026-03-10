@@ -13,7 +13,6 @@ NUM_EPISODES = 5
 # Paths relative to repo root
 REPO_ROOT = os.path.join(os.path.dirname(__file__), "..")
 HE_PODCAST = os.path.join(REPO_ROOT, "he", "podcast", "index.html")
-EN_PODCAST = os.path.join(REPO_ROOT, "en", "podcast", "index.html")
 
 
 def fetch_episodes():
@@ -78,7 +77,6 @@ def main():
         print(f"  - {ep['title']}")
 
     update_html_file(HE_PODCAST, episodes)
-    update_html_file(EN_PODCAST, episodes)
 
 
 if __name__ == "__main__":
