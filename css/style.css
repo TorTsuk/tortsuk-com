@@ -364,6 +364,12 @@ footer {
   color: var(--color-text-light);
 }
 
+footer .disclaimer {
+  font-size: 0.7rem;
+  margin-top: var(--space-xs);
+  opacity: 0.7;
+}
+
 /* ===== Consulting Services ===== */
 .service-item {
   margin-bottom: var(--space-lg);
