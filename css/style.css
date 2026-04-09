@@ -502,6 +502,40 @@ footer .disclaimer {
 }
 
 /* ===== Responsive ===== */
+/* About section */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.about-photos {
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.photo-main {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.photo-portrait {
+  position: absolute;
+  bottom: 0;
+  left: -16px;
+  width: 45%;
+  border-radius: 50%;
+  border: 3px solid var(--color-bg);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+[dir="rtl"] .photo-portrait {
+  left: auto;
+  right: -16px;
+}
+
 @media (max-width: 600px) {
   html {
     font-size: 16px;
@@ -530,5 +564,14 @@ footer .disclaimer {
 
   .contact-section {
     padding: var(--space-md);
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about-photos {
+    max-width: 280px;
+    margin: 0 auto var(--space-md);
   }
 }
