@@ -502,6 +502,34 @@ footer .disclaimer {
 }
 
 /* ===== Responsive ===== */
+/* Intro photos */
+.intro-photos {
+  position: relative;
+  margin-bottom: var(--space-lg);
+  padding-bottom: 24px;
+}
+
+.intro-photos .photo-main {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.intro-photos .photo-portrait {
+  position: absolute;
+  bottom: 0;
+  right: -16px;
+  width: 30%;
+  border-radius: 50%;
+  border: 3px solid var(--color-bg);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+[dir="ltr"] .intro-photos .photo-portrait {
+  right: auto;
+  left: -16px;
+}
+
 /* About section */
 .about-layout {
   display: grid;
