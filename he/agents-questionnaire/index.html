@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>שאלון — מפתח/ת אייג'נטים</title>
+  <meta name="description" content="שאלון מקדים למתעניינים בפרויקט בניית אייג'נטים ארגוניים">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .q-form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .q-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .q-label {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .q-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-accent);
+      color: white;
+      border-radius: 50%;
+      width: 1.6rem;
+      height: 1.6rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .q-hint {
+      font-size: 0.88rem;
+      color: var(--color-text-light);
+      margin-bottom: 0.3rem;
+      line-height: 1.5;
+    }
+
+    .q-form input[type="text"],
+    .q-form input[type="email"],
+    .q-form textarea {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      width: 100%;
+    }
+
+    .q-form input:focus,
+    .q-form textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+
+    .q-form textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .q-form textarea.tall {
+      min-height: 130px;
+    }
+
+    .multi-input {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      cursor: pointer;
+      font-weight: 400;
+    }
+
+    .radio-option input[type="radio"] {
+      width: 1rem;
+      height: 1rem;
+      accent-color: var(--color-accent);
+      flex-shrink: 0;
+    }
+
+    .q-divider {
+      border: none;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .submit-btn {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      padding: 0.7rem 2.2rem;
+      background-color: var(--color-accent);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      align-self: flex-end;
+      transition: background-color 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--color-accent-hover);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .success-box {
+      display: none;
+      background-color: var(--color-surface);
+      border-right: 4px solid var(--color-accent);
+      border-radius: 6px;
+      padding: var(--space-lg);
+      text-align: center;
+    }
+
+    .success-box h2 {
+      margin-bottom: var(--space-xs);
+    }
+
+    .error-msg {
+      display: none;
+      color: #c0392b;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="/he/" class="site-name">תור צוק</a>
+      <nav>
+        <a href="/he/podcast/">וויקלי סינק</a>
+        <a href="/he/consulting/">ארגונים</a>
+        <a href="/he/blog/">בלוג</a>
+        <a href="/he/#contact">צור קשר</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="intro">
+      <h1>שאלון — מפתח/ת אייג'נטים</h1>
+      <p class="tagline">
+        סטרטאפ בוגר מחפש מפתח/ת אייג'נטים לפרויקט של כמה חודשים.
+      </p>
+      <p>
+        לוקח בערך 10 דקות. אין תשובות נכונות — רק מה שאמיתי.<br>
+        נחזור תוך שבוע.
+      </p>
+    </div>
+
+    <form class="q-form" id="agentsForm" action="https://formspree.io/f/xgonvjop" method="POST">
+      <input type="hidden" name="_subject" value="שאלון — מפתח/ת אייג'נטים">
+      <input type="hidden" name="_language" value="he">
+
+      <!-- 1 -->
+      <div class="q-item">
+        <div class="q-label">
+          <span class="q-num">1</span>
+          שם ואיך הכי נוח לחזור אליך
+        </div>
+        <div class="multi-input">
+          <input type="text" name="שם" placeholder="שם מלא" required>
+          <input type="text" name="קשר" placeholder="אימייל / לינקדאין / טלגרם" required>
+        </div>
+      </div>
+
+      <hr class="q-divider">
+
+      <!-- 2 -->
+      <div class="q-item">
+        <div class="q-label">
+          <span class="q-num">2</span>
+          ספר/י לי עליך ב-3 משפטים
+        </div>
+        <div class="q-hint">מה הרקע? טכני, עסקי, קומבינציה?</div>
+        <textarea name="רקע" required></textarea>
+      </div>
+
+      <hr class="q-divider">
+
+      <!-- 3 -->
+      <div class="q-item">
+        <div class="q-label">
+          <span class="q-num">3</span>
+          עם אילו כלים את/ה עובד/ת בעיקר?
+        </div>
+        <div class="q-hint">לדוגמה: Claude API, LangChain, n8n, Make, Cursor, אחר</div>
+        <input type="text" name="כלים" required>
+      </div>
+
+      <hr class="q-divider">
+
+      <!-- 4 -->
+      <div class="q-item">
+        <div class="q-label">
+          <span class="q-num">4</span>
+          תאר/י agent אחד שבנית לאחרונה
+        </div>
+        <div class="q-hint">מה הייתה הבעיה העסקית, מי השתמש בו, ומה השתנה בפועל?</div>
+        <textarea class="tall" name="דוגמה" required></textarea>
+      </div>
+
+      <hr class="q-divider">
+
+      <!-- 5 -->
+      <div class="q-item">
+        <div class="q-label">
+          <span class="q-num">5</span>
+          תרחיש קצר
+        </div>
+        <div class="q-hint">
+          ישבת עם VP Sales שאומר לך "אני מפסיד הרבה RFPs כי הצוות לא מספיק מהיר".<br>
+          מה 3 השאלות הראשונות שתשאל/י אותו?
+        </div>
+        <textarea class="tall" name="תרחיש" placeholder="שאלה 1&#10;שאלה 2&#10;שאלה 3" required></textarea>
+      </div>
+
+      <hr class="q-divider">
+
+      <!-- 6 -->
+      <div class="q-item">
+        <div class="q-label">
+          <span class="q-num">6</span>
+          ACV, Gross Margin, RFP — עד כמה זו השפה הטבעית שלך?
+        </div>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="שפה_עסקית" value="שוחה בזה בשוטף" required>
+            שוחה/ה בזה בשוטף
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="שפה_עסקית" value="מכיר בגדול, לא הבית שלי">
+            מכיר/ה בגדול, אבל זה לא הבית שלי
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="שפה_עסקית" value="פחות מוכר, לומד מהר">
+            פחות מוכר/ת — לומד/ת מהר
+          </label>
+        </div>
+      </div>
+
+      <hr class="q-divider">
+
+      <!-- 7 -->
+      <div class="q-item">
+        <div class="q-label">
+          <span class="q-num">7</span>
+          עבדת אי פעם בלי מפרט ברור?
+        </div>
+        <div class="q-hint">תאר/י בקצרה פרויקט שהתחיל מ"אנחנו צריכים משהו כזה בערך" — מה עשית בשבוע הראשון?</div>
+        <textarea name="סביבה_לא_מוגדרת" required></textarea>
+      </div>
+
+      <hr class="q-divider">
+
+      <!-- 8 -->
+      <div class="q-item">
+        <div class="q-label">
+          <span class="q-num">8</span>
+          זמינות ותמחור
+        </div>
+        <div class="multi-input">
+          <input type="text" name="זמינות_התחלה" placeholder="מתי יכול/ה להתחיל?">
+          <input type="text" name="שעות_בשבוע" placeholder="כמה שעות בשבוע?">
+          <input type="text" name="תמחור" placeholder="טווח תמחור (אם נוח לשתף)">
+        </div>
+      </div>
+
+      <hr class="q-divider">
+
+      <!-- 9 -->
+      <div class="q-item">
+        <div class="q-label">
+          <span class="q-num">9</span>
+          שאלה אחת שתרצה/י לשאול לפני שנחליט
+        </div>
+        <textarea name="שאלה_לנו"></textarea>
+      </div>
+
+      <hr class="q-divider">
+
+      <!-- 10 -->
+      <div class="q-item">
+        <div class="q-label">
+          <span class="q-num">10</span>
+          האם נוכל לפנות אליך לפרויקטים נוספים בעתיד?
+        </div>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="פרויקטים_עתידיים" value="כן, ארגונים בלבד" required>
+            כן, ארגונים בלבד
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="פרויקטים_עתידיים" value="כן, גם אנשים פרטיים">
+            כן, גם אנשים פרטיים
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="פרויקטים_עתידיים" value="לא תודה">
+            לא תודה
+          </label>
+        </div>
+      </div>
+
+      <div class="error-msg" id="errorMsg">משהו השתבש. אפשר לנסות שוב או לפנות ישירות במייל.</div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">שלח/י שאלון</button>
+    </form>
+
+    <div class="success-box" id="successBox">
+      <h2>תודה!</h2>
+      <p>קיבלנו את השאלון שלך.<br>נחזור תוך שבוע.</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('agentsForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const err = document.getElementById('errorMsg');
+      btn.disabled = true;
+      btn.textContent = 'שולח...';
+      err.style.display = 'none';
+
+      try {
+        const res = await fetch(this.action, {
+          method: 'POST',
+          body: new FormData(this),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          this.style.display = 'none';
+          document.getElementById('successBox').style.display = 'block';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          throw new Error();
+        }
+      } catch {
+        err.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'שלח/י שאלון';
+      }
+    });
+  </script>
+
+</body>
+</html>
