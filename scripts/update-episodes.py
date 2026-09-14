@@ -8,7 +8,7 @@ import os
 
 RSS_URL = "https://feeds.megaphone.fm/POLTD1514843688"
 SPOTIFY_FALLBACK = "https://open.spotify.com/show/674Fd3udoDREXmBq44dHWY"
-NUM_EPISODES = 5
+NUM_EPISODES = 10
 
 # Paths relative to repo root
 REPO_ROOT = os.path.join(os.path.dirname(__file__), "..")
