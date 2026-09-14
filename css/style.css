@@ -509,6 +509,18 @@ footer .disclaimer {
   padding-bottom: 24px;
 }
 
+/* Refined, compact circular portrait aligned to the reading start */
+.intro-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 22%;
+  display: block;
+  margin-block-end: var(--space-lg);
+  margin-inline-end: auto;
+}
+
 .intro-photos .photo-main {
   width: 100%;
   border-radius: 8px;
